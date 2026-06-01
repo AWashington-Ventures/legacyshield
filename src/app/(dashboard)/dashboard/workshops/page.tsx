@@ -1,5 +1,7 @@
 'use client';
 
+import { useState } from 'react';
+
 const workshops = [
   {
     id: 'estate-planning-workshop',
@@ -104,6 +106,31 @@ const workshops = [
 ];
 
 export default function WorkshopsPage() {
+  const [loading, setLoading] = useState<string | null>(null);
+  const [error, setError] = useState('');
+
+  const handleRegister = async (workshopId: string) => {
+    setError('');
+    setLoading(workshopId);
+    try {
+      const res = await fetch('/api/stripe/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ plan: 'workshop', workshopId }),
+      });
+      const data = await res.json();
+      if (data.url) {
+        window.location.href = data.url;
+      } else {
+        setError(data.error || 'Unable to process registration. Please try again.');
+      }
+    } catch {
+      setError('Something went wrong. Please try again.');
+    } finally {
+      setLoading(null);
+    }
+  };
+
   return (
     <div>
       <div className="mb-8">
@@ -120,6 +147,12 @@ export default function WorkshopsPage() {
         </div>
         <div className="text-4xl">🤝</div>
       </div>
+
+      {error && (
+        <div className="mb-6 bg-red-50 border border-red-200 text-red-700 rounded-xl px-4 py-3 text-sm">
+          {error}
+        </div>
+      )}
 
       <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
         {workshops.map((workshop, idx) => (
@@ -138,7 +171,7 @@ export default function WorkshopsPage() {
                   <span className={`text-xs font-semibold px-3 py-1 rounded-full ${
                     workshop.available ? 'bg-[#d4a017]/10 text-[#b8860b]' : 'bg-gray-100 text-gray-400'
                   }`}>
-                    {workshop.available ? workshop.price : 'Coming Soon'}
+                    {workshop.available ? 'Included with Membership' : 'Coming Soon'}
                   </span>
                   {workshop.available && workshop.seatsLeft <= 5 && (
                     <span className="text-xs font-bold px-3 py-1 rounded-full bg-red-50 text-red-600">
@@ -175,10 +208,15 @@ export default function WorkshopsPage() {
             <div className="px-6 pb-6">
               {workshop.available ? (
                 <button
-                  className="w-full bg-[#0a1628] hover:bg-[#1a3a5c] text-white font-semibold py-3 rounded-full text-sm transition-colors"
-                  onClick={() => alert('Workshop registration coming soon! Check back shortly.')}
+                  className="w-full bg-[#0a1628] hover:bg-[#1a3a5c] text-white font-semibold py-3 rounded-full text-sm transition-colors disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  onClick={() => handleRegister(workshop.id)}
+                  disabled={loading === workshop.id}
                 >
-                  Reserve Your Seat →
+                  {loading === workshop.id ? (
+                    <><span className="animate-spin inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full" /> Processing...</>
+                  ) : (
+                    'Reserve Your Seat →'
+                  )}
                 </button>
               ) : (
                 <button
