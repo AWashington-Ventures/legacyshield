@@ -93,7 +93,7 @@ export default function Home() {
           <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 max-w-2xl mx-auto">
             <video
               controls
-              preload="metadata"
+              preload="auto"
               className="w-full rounded-2xl"
               poster="/legacyshield-welcome-thumb.jpg"
             >
