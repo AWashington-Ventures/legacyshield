@@ -13,10 +13,13 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  height: 100%;
 }
 
 body {
   overflow-x: hidden;
+  overscroll-behavior-y: none;
+  min-height: 100%;
 }
 
 body {

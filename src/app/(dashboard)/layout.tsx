@@ -18,7 +18,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
   if (subscriptionStatus !== 'active') redirect('/subscribe');
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-[100dvh] bg-gray-50 overflow-x-hidden">
       {/* Desktop Sidebar — hidden on mobile */}
       <aside className="hidden md:flex w-64 bg-[#0a1628] min-h-screen flex-col fixed left-0 top-0 z-30">
         {/* Logo */}
