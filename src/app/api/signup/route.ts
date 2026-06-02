@@ -43,7 +43,7 @@ export async function POST(req: NextRequest) {
     try {
       await resend.emails.send({
         from: 'Darcia | Chief of Staff <darcia@legacyshieldpro.com>',
-        reply_to: 'Anthony Washington <ahwashington@legacyshieldpro.com>',
+        replyTo: 'Anthony Washington <ahwashington@legacyshieldpro.com>',
         to: email.toLowerCase().trim(),
         subject: 'Welcome to LegacyShield Pro — Your Family\'s Protection Starts Now',
         html: `
