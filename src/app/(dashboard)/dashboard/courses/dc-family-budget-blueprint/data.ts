@@ -7,6 +7,8 @@ export interface Lesson {
   content: string[];
   keyTakeaways: string[];
   actionStep: string;
+  downloadUrl?: string | null;
+  downloadLabel?: string | null;
 }
 export interface Course {
   id: string;
@@ -73,6 +75,8 @@ export const course: Course = {
         'Progress beats perfection — any movement toward your target framework is a win',
       ],
       actionStep: 'Download the LegacyShield DC Family Budget Blueprint worksheet at legacyshieldpro.com/worksheets/. Fill in your actual after-tax income and every monthly expense. Calculate your current percentages across needs, wants, and savings. Then identify one want you can reduce by $50 this month and redirect it to savings.',
+      downloadUrl: '/worksheets',
+      downloadLabel: 'DC Family Budget Blueprint Worksheet',
     },
     {
       id: 3,
@@ -97,6 +101,8 @@ export const course: Course = {
         'Food, subscriptions, and small purchases are the three most common budget surprises',
       ],
       actionStep: 'Choose one tracking method this week — envelope, spreadsheet, or app — and commit to using it for 30 days. Download the LegacyShield DC Family Budget Blueprint worksheet at legacyshieldpro.com/worksheets as your starting template. Set a recurring 15-minute calendar event each Sunday for your weekly money review.',
+      downloadUrl: '/worksheets',
+      downloadLabel: 'DC Family Budget Blueprint Worksheet',
     },
     {
       id: 4,
@@ -121,6 +127,8 @@ export const course: Course = {
         'Consistent budgeting over 24 months creates genuine financial breathing room and wealth-building momentum',
       ],
       actionStep: 'Start Week 1 today. Pull your last 30 days of statements — bank and credit card — and spend 30 minutes categorizing every transaction. This single act of awareness is the most important financial step most people never take. Download the LegacyShield DC Family Budget Blueprint worksheet at legacyshieldpro.com/worksheets to make it easier.',
+      downloadUrl: '/worksheets',
+      downloadLabel: 'DC Family Budget Blueprint Worksheet',
     },
   ],
 };
