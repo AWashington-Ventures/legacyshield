@@ -163,7 +163,19 @@ export default function LessonPageClient({
         </div>
       )}
 
-      {/* Lesson Content */}
+      <div className="prose prose-lg max-w-none mb-10">
+        {lesson.content.map((paragraph, i) => (
+          <p
+            key={i}
+            className="text-gray-700 leading-relaxed mb-5 text-base"
+            dangerouslySetInnerHTML={{
+              __html: paragraph.replace(/\*\*(.*?)\*\*/g, '<strong class="text-[#0a1628] font-semibold">$1</strong>')
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Download Resource — above Key Takeaways */}
       {lesson.downloadUrl && (
         <div className="mb-8">
           <a
@@ -186,18 +198,6 @@ export default function LessonPageClient({
           </a>
         </div>
       )}
-
-      <div className="prose prose-lg max-w-none mb-10">
-        {lesson.content.map((paragraph, i) => (
-          <p
-            key={i}
-            className="text-gray-700 leading-relaxed mb-5 text-base"
-            dangerouslySetInnerHTML={{
-              __html: paragraph.replace(/\*\*(.*?)\*\*/g, '<strong class="text-[#0a1628] font-semibold">$1</strong>')
-            }}
-          />
-        ))}
-      </div>
 
       {/* Key Takeaways */}
       <div className="bg-[#0a1628] rounded-2xl p-7 mb-8">
