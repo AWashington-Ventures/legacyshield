@@ -138,6 +138,36 @@ export default function DashboardPage() {
         </Link>
       </div>
 
+      {/* Member Resources */}
+      <div className="mb-10">
+        <div className="flex items-center justify-between mb-5">
+          <h2 className="text-xl font-bold text-[#0a1628]">Member Resources</h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <Link href="/dashboard/calculators"
+            className="bg-white rounded-2xl border border-gray-100 p-5 hover:shadow-md hover:border-[#d4a017]/30 transition-all group">
+            <div className="text-3xl mb-3">📊</div>
+            <h3 className="font-bold text-[#0a1628] group-hover:text-[#d4a017] transition-colors mb-1">Life Insurance Calculator</h3>
+            <p className="text-gray-500 text-sm">Calculate exactly how much coverage your family needs.</p>
+            <span className="text-[#d4a017] text-sm font-semibold mt-3 inline-block">Calculate Now →</span>
+          </Link>
+          <Link href="/dashboard/templates"
+            className="bg-white rounded-2xl border border-gray-100 p-5 hover:shadow-md hover:border-[#d4a017]/30 transition-all group">
+            <div className="text-3xl mb-3">📋</div>
+            <h3 className="font-bold text-[#0a1628] group-hover:text-[#d4a017] transition-colors mb-1">Estate Planning Templates</h3>
+            <p className="text-gray-500 text-sm">Free checklists, trackers, and worksheets for your family.</p>
+            <span className="text-[#d4a017] text-sm font-semibold mt-3 inline-block">View Templates →</span>
+          </Link>
+          <Link href="/dashboard/community"
+            className="bg-white rounded-2xl border border-gray-100 p-5 hover:shadow-md hover:border-[#d4a017]/30 transition-all group">
+            <div className="text-3xl mb-3">👥</div>
+            <h3 className="font-bold text-[#0a1628] group-hover:text-[#d4a017] transition-colors mb-1">Private Community</h3>
+            <p className="text-gray-500 text-sm">Connect with DC families on the same legacy-building journey.</p>
+            <span className="text-[#d4a017] text-sm font-semibold mt-3 inline-block">Join Community →</span>
+          </Link>
+        </div>
+      </div>
+
       {/* Course Grid */}
       <div className="mb-6">
         <div className="flex items-center justify-between mb-5">
