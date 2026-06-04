@@ -53,7 +53,7 @@ const templates = [
     title: 'Blueprint Budget Worksheet',
     description: 'The LegacyShield 50/30/20 budget worksheet — allocate income, track expenses, and find savings.',
     action: 'Open Worksheet',
-    href: '/dashboard/worksheets',
+    href: '/worksheets',
     category: 'Budgeting',
     color: 'teal',
     internal: true,
