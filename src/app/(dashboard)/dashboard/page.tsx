@@ -30,12 +30,12 @@ const courses = [
     href: '/dashboard/courses/generational-wealth-playbook',
   },
   {
-    courseId: null,
+    courseId: 'protecting-your-family',
     title: 'Protecting Your Family',
     icon: '🏠',
     lessons: 4,
     description: 'Power of attorney, guardianship, and family protection planning.',
-    href: '/dashboard/courses',
+    href: '/dashboard/courses/protecting-your-family',
   },
 ];
 
