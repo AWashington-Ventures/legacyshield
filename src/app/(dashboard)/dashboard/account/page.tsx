@@ -168,7 +168,9 @@ export default function AccountPage() {
                   <p className="text-gray-300 text-xs mt-0.5">1 session/year · Personalized with Anthony Washington</p>
                 </div>
                 <a
-                  href={`mailto:ahwashington@legacyshieldpro.com?subject=1:1 Legacy Planning Session Request — ${name}&body=Hi Anthony, I am a Legacy Builder member and would like to schedule my annual 1:1 Legacy Planning Session. My name is ${name} and my email is ${email}. Please send me available times. Thank you!`}
+                  href="https://calendly.com/ahwashington-legacyshieldpro/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="ml-3 bg-[#d4a017] hover:bg-[#b8860b] text-[#0a1628] font-bold text-xs px-3 py-1.5 rounded-full transition-colors whitespace-nowrap"
                 >
                   Book →
