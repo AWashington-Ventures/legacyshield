@@ -1,6 +1,8 @@
 import { getServerSession } from 'next-auth';
 import { redirect } from 'next/navigation';
 import { authOptions } from '@/lib/auth';
+import connectDB from '@/lib/mongodb';
+import User from '@/models/User';
 import Link from 'next/link';
 
 const navItems = [
@@ -14,7 +16,11 @@ export default async function DashboardLayout({ children }: { children: React.Re
   const session = await getServerSession(authOptions);
   if (!session) redirect('/login');
 
-  const subscriptionStatus = (session.user as any)?.subscriptionStatus;
+  // Check subscription status directly from MongoDB (not JWT) to catch post-payment updates
+  await connectDB();
+  const userId = (session.user as any)?.id;
+  const dbUser = userId ? await User.findById(userId).select('subscriptionStatus').lean() : null;
+  const subscriptionStatus = (dbUser as any)?.subscriptionStatus || (session.user as any)?.subscriptionStatus;
   if (subscriptionStatus !== 'active') redirect('/subscribe');
 
   return (
