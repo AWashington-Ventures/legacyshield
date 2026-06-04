@@ -150,7 +150,9 @@ export default function AccountPage() {
                   <p className="text-gray-300 text-xs mt-0.5">4 sessions/year · Estate planning & legal questions</p>
                 </div>
                 <a
-                  href={`mailto:ahwashington@legacyshieldpro.com?subject=Attorney Consult Request&body=Hi, I'd like to schedule my quarterly attorney consultation. My name is ${name} (${email}).`}
+                  href="https://www.legalzoom.com/attorney/attorney-services"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="ml-3 bg-[#d4a017] hover:bg-[#b8860b] text-[#0a1628] font-bold text-xs px-3 py-1.5 rounded-full transition-colors whitespace-nowrap"
                 >
                   Schedule →
@@ -166,7 +168,7 @@ export default function AccountPage() {
                   <p className="text-gray-300 text-xs mt-0.5">1 session/year · Personalized with Anthony Washington</p>
                 </div>
                 <a
-                  href={`mailto:ahwashington@legacyshieldpro.com?subject=1:1 Legacy Planning Session Request&body=Hi Anthony, I'd like to schedule my annual 1:1 Legacy Planning Session. My name is ${name} (${email}).`}
+                  href={`mailto:ahwashington@legacyshieldpro.com?subject=1:1 Legacy Planning Session Request — ${name}&body=Hi Anthony, I am a Legacy Builder member and would like to schedule my annual 1:1 Legacy Planning Session. My name is ${name} and my email is ${email}. Please send me available times. Thank you!`}
                   className="ml-3 bg-[#d4a017] hover:bg-[#b8860b] text-[#0a1628] font-bold text-xs px-3 py-1.5 rounded-full transition-colors whitespace-nowrap"
                 >
                   Book →
@@ -182,10 +184,12 @@ export default function AccountPage() {
                   <p className="text-gray-300 text-xs mt-0.5">Annual review · Make sure your coverage is right</p>
                 </div>
                 <a
-                  href={`mailto:ahwashington@legacyshieldpro.com?subject=Insurance Policy Review Request&body=Hi, I'd like to schedule my annual insurance policy review. My name is ${name} (${email}).`}
+                  href="https://www.policygenius.com/life-insurance/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="ml-3 bg-[#d4a017] hover:bg-[#b8860b] text-[#0a1628] font-bold text-xs px-3 py-1.5 rounded-full transition-colors whitespace-nowrap"
                 >
-                  Request →
+                  Review →
                 </a>
               </div>
             </div>
