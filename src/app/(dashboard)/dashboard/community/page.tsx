@@ -19,7 +19,7 @@ export default function CommunityPage() {
           Connect with DC families who are building generational wealth, protecting their loved ones, and taking control of their financial future. Ask questions, share wins, and get support from Anthony and fellow members.
         </p>
         <a
-          href="https://www.facebook.com/groups"
+          href="https://www.facebook.com/profile.php?id=61590401724611"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 bg-[#1877F2] hover:bg-[#1565d8] text-white font-bold px-6 py-3 rounded-full text-sm transition-colors"
