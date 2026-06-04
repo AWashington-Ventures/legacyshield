@@ -47,16 +47,23 @@ interface CompletedLesson {
 export default function DashboardPage() {
   const { data: session } = useSession();
   const [completedLessons, setCompletedLessons] = useState<CompletedLesson[]>([]);
+  const [liveStatus, setLiveStatus] = useState<{ subscriptionStatus?: string; plan?: string } | null>(null);
 
   const firstName = session?.user?.name?.split(' ')[0] ?? 'Member';
-  const subscriptionStatus = (session?.user as any)?.subscriptionStatus;
-  const plan = (session?.user as any)?.plan;
+  // Use live DB status if available, fall back to JWT session
+  const subscriptionStatus = liveStatus?.subscriptionStatus ?? (session?.user as any)?.subscriptionStatus;
+  const plan = liveStatus?.plan ?? (session?.user as any)?.plan;
   const isActive = subscriptionStatus === 'active';
 
   useEffect(() => {
     fetch('/api/progress')
       .then((r) => r.json())
       .then((data) => setCompletedLessons(data.completedLessons ?? []))
+      .catch(() => {});
+    // Fetch live subscription status from DB to avoid stale JWT data
+    fetch('/api/user/status')
+      .then((r) => r.json())
+      .then((data) => setLiveStatus(data))
       .catch(() => {});
   }, []);
 
