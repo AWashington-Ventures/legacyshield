@@ -25,7 +25,7 @@ const courses = [
     courseId: 'generational-wealth-playbook',
     title: 'Generational Wealth Playbook',
     icon: '💰',
-    lessons: 7,
+    lessons: 8,
     description: 'Real strategies for DC working families.',
     href: '/dashboard/courses/generational-wealth-playbook',
   },
@@ -125,18 +125,54 @@ export default function DashboardPage() {
         ))}
       </div>
 
-      {/* Start Here Banner */}
-      <div className="bg-[#0a1628] rounded-2xl p-8 mb-10 flex flex-col md:flex-row items-center justify-between gap-6">
-        <div>
-          <div className="text-[#d4a017] text-xs font-bold uppercase tracking-widest mb-2">Recommended First Step</div>
-          <h2 className="text-2xl font-bold text-white mb-2">Start with Life Insurance 101</h2>
-          <p className="text-gray-300 text-sm max-w-lg">56% of DC families are underinsured. This course teaches you exactly how much coverage you need — in under 45 minutes.</p>
-        </div>
-        <Link href="/dashboard/courses"
-          className="bg-[#d4a017] hover:bg-[#b8860b] text-[#0a1628] font-bold px-8 py-4 rounded-full text-sm transition-colors whitespace-nowrap flex-shrink-0">
-          Start Learning →
-        </Link>
-      </div>
+      {/* Start Here Banner — Dynamic */}
+      {(() => {
+        const nextCourse = courses.find(c => c.courseId && getCompleted(c.courseId) < c.lessons);
+        const allDone = courses.filter(c => c.courseId).every(c => getCompleted(c.courseId!) >= c.lessons);
+        if (allDone) {
+          return (
+            <div className="bg-gradient-to-r from-green-700 to-green-600 rounded-2xl p-8 mb-10 flex flex-col md:flex-row items-center justify-between gap-6">
+              <div>
+                <div className="text-green-200 text-xs font-bold uppercase tracking-widest mb-2">🏆 All Courses Complete!</div>
+                <h2 className="text-2xl font-bold text-white mb-2">You&apos;ve finished all LegacyShield Pro courses!</h2>
+                <p className="text-green-100 text-sm max-w-lg">Your family is better protected because of the work you put in. Explore your resources or book your 1:1 Legacy Planning Session.</p>
+              </div>
+              <Link href="/dashboard/account"
+                className="bg-white hover:bg-green-50 text-green-700 font-bold px-8 py-4 rounded-full text-sm transition-colors whitespace-nowrap flex-shrink-0">
+                View My Benefits →
+              </Link>
+            </div>
+          );
+        }
+        if (nextCourse) {
+          return (
+            <div className="bg-[#0a1628] rounded-2xl p-8 mb-10 flex flex-col md:flex-row items-center justify-between gap-6">
+              <div>
+                <div className="text-[#d4a017] text-xs font-bold uppercase tracking-widest mb-2">Continue Learning</div>
+                <h2 className="text-2xl font-bold text-white mb-2">{nextCourse.title}</h2>
+                <p className="text-gray-300 text-sm max-w-lg">{nextCourse.description}</p>
+              </div>
+              <Link href={nextCourse.href}
+                className="bg-[#d4a017] hover:bg-[#b8860b] text-[#0a1628] font-bold px-8 py-4 rounded-full text-sm transition-colors whitespace-nowrap flex-shrink-0">
+                Continue →
+              </Link>
+            </div>
+          );
+        }
+        return (
+          <div className="bg-[#0a1628] rounded-2xl p-8 mb-10 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+              <div className="text-[#d4a017] text-xs font-bold uppercase tracking-widest mb-2">Recommended First Step</div>
+              <h2 className="text-2xl font-bold text-white mb-2">Start with Life Insurance 101</h2>
+              <p className="text-gray-300 text-sm max-w-lg">56% of DC families are underinsured. This course teaches you exactly how much coverage you need — in under 45 minutes.</p>
+            </div>
+            <Link href="/dashboard/courses"
+              className="bg-[#d4a017] hover:bg-[#b8860b] text-[#0a1628] font-bold px-8 py-4 rounded-full text-sm transition-colors whitespace-nowrap flex-shrink-0">
+              Start Learning →
+            </Link>
+          </div>
+        );
+      })()}
 
       {/* Member Resources */}
       <div className="mb-10">
