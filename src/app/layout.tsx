@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     images: ['https://legacyshieldpro.com/images/og-image.png'],
   },
   other: {
-    'impact-site-verification': 'f71c8c44-9cd2-4737-8644-592d0745fb4c',
+    'impact-site-verification': '781845d3-ea7e-4e07-a6d9-8e423aece282',
     'fo-verify': 'c509360c-c941-41f1-924d-b7988d8b195b',
   },
 };
