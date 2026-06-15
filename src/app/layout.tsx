@@ -68,11 +68,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className={inter.className}>
         <Providers>{children}</Providers>
-        {/* Rewardful Affiliate Tracking */}
-        <Script id="rewardful-queue" strategy="afterInteractive">
-          {`(function(w,r){w._rwq=r;w[r]=w[r]||function(){(w[r].q=w[r].q||[]).push(arguments)}})(window,'rewardful');`}
-        </Script>
-        <Script src="https://r.wdfl.co/rw.js" data-rewardful="a7b451" strategy="afterInteractive" />
+
       </body>
     </html>
   );

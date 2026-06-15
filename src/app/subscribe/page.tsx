@@ -8,17 +8,7 @@ export default function SubscribePage() {
   const { data: session } = useSession();
   const [loading, setLoading] = useState<string | null>(null);
   const [error, setError] = useState('');
-  const [referral, setReferral] = useState<string | null>(null);
 
-  // Capture Rewardful referral ID when tracking is ready
-  useEffect(() => {
-    if (typeof window !== 'undefined' && (window as any).rewardful) {
-      (window as any).rewardful('ready', function () {
-        const ref = (window as any).Rewardful?.referral || null;
-        if (ref) setReferral(ref);
-      });
-    }
-  }, []);
 
   const handleCheckout = async (plan: 'community' | 'legacy_builder') => {
     setError('');
@@ -29,7 +19,7 @@ export default function SubscribePage() {
       const res = await fetch('/api/stripe/checkout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ plan, referral }),
+        body: JSON.stringify({ plan }),
       });
       const data = await res.json();
       if (!res.ok || !data.url) {
