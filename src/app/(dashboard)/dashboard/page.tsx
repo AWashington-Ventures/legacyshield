@@ -211,6 +211,22 @@ export default function DashboardPage() {
         </div>
       </div>
 
+      {/* Partner Discounts */}
+      <div className="mb-10">
+        <div className="bg-[#0a1628] rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div>
+            <div className="text-[#d4a017] text-xs font-bold uppercase tracking-widest mb-1">💼 Partner Discount</div>
+            <h3 className="text-lg font-bold text-white mb-1">Need Accounting Software?</h3>
+            <p className="text-gray-300 text-sm">Get a discount on QuickBooks Online through our partner link — perfect for tracking your family&apos;s finances and small business income.</p>
+          </div>
+          <a href="https://quickbooks.intuit.com/partners/affiliates?cid=par_pim_XxE1_hZGnDWQ"
+             target="_blank" rel="noopener noreferrer"
+             className="flex-shrink-0 bg-[#d4a017] text-[#0a1628] font-bold px-6 py-3 rounded-xl text-sm hover:bg-[#c49016] transition-colors whitespace-nowrap">
+            Get QuickBooks Discount →
+          </a>
+        </div>
+      </div>
+
       {/* Course Grid */}
       <div className="mb-6">
         <div className="flex items-center justify-between mb-5">
