@@ -2,8 +2,10 @@ import { NextRequest, NextResponse } from 'next/server';
 import { stripe } from '@/lib/stripe';
 import connectDB from '@/lib/mongodb';
 import User from '@/models/User';
+import PrivacyGuideOrder from '@/models/PrivacyGuideOrder';
 import Stripe from 'stripe';
 import { sendWelcomeEmail, sendPaymentFailedEmail } from '@/lib/email';
+import { generatePrivacyGuide, sendPrivacyGuideEmail } from '@/lib/privacyGuide';
 
 export const dynamic = 'force-dynamic';
 
@@ -31,7 +33,40 @@ export async function POST(req: NextRequest) {
       // ── Subscription activated ─────────────────────────────────────────────
       case 'checkout.session.completed': {
         const session = event.data.object as Stripe.Checkout.Session;
-        const { userId, plan } = session.metadata ?? {};
+        const { userId, plan, type, orderId } = session.metadata ?? {};
+
+        // ── Privacy Shield Guide one-time purchase ──────────────────────────
+        if (type === 'privacy_guide' && orderId) {
+          const order = await PrivacyGuideOrder.findByIdAndUpdate(
+            orderId,
+            { status: 'paid', paidAt: new Date(), stripeSessionId: session.id },
+            { new: true }
+          );
+          if (order) {
+            try {
+              const pdfBuffer = await generatePrivacyGuide({
+                firstName: order.firstName,
+                lastName: order.lastName,
+                email: order.email,
+                dob: order.dob,
+                currentAddress: order.currentAddress,
+                previousAddresses: order.previousAddresses,
+              });
+              await sendPrivacyGuideEmail(order.email, order.firstName, pdfBuffer);
+              await PrivacyGuideOrder.findByIdAndUpdate(orderId, {
+                status: 'delivered',
+                deliveredAt: new Date(),
+              });
+              console.log(`[webhook] Privacy guide delivered to ${order.email}`);
+            } catch (err) {
+              await PrivacyGuideOrder.findByIdAndUpdate(orderId, { status: 'failed' });
+              console.error('[webhook] Privacy guide delivery failed:', err);
+            }
+          }
+          break;
+        }
+
+        // ── Standard subscription activation ────────────────────────────────
         if (userId) {
           const now = new Date();
           const user = await User.findByIdAndUpdate(
@@ -41,7 +76,6 @@ export async function POST(req: NextRequest) {
               plan: plan || 'community',
               stripeCustomerId: session.customer as string,
               stripeSubscriptionId: session.subscription as string,
-              // Start onboarding sequence; clear any re-engagement sequence
               onboardingStartedAt: now,
               $unset: { reengagementStartedAt: '' },
             },
@@ -49,7 +83,6 @@ export async function POST(req: NextRequest) {
           );
           console.log(`[webhook] Activated subscription for user ${userId}`);
 
-          // Day 0: Send welcome email immediately
           if (user?.email) {
             await sendWelcomeEmail({
               name: user.name,
