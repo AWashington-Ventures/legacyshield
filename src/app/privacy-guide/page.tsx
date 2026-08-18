@@ -28,6 +28,7 @@ export default function PrivacyGuidePage() {
       dob: (form.elements.namedItem('dob') as HTMLInputElement).value,
       currentAddress: (form.elements.namedItem('currentAddress') as HTMLInputElement).value,
       previousAddresses: prevAddresses.filter(a => a.trim()),
+      additionalNames: (form.elements.namedItem('additionalNames') as HTMLInputElement).value,
     };
 
     try {
@@ -94,6 +95,19 @@ export default function PrivacyGuidePage() {
           </ul>
         </div>
 
+        {/* Important Note */}
+        <div className="bg-[#1a2a10] border border-[#4a7a20] rounded-2xl p-5 mb-8">
+          <div className="flex items-start gap-3">
+            <span className="text-2xl flex-shrink-0">📧</span>
+            <div>
+              <p className="text-[#7dc43f] font-bold text-sm uppercase tracking-widest mb-1">Important — Monitor Your Email</p>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                After submitting opt-out requests, <strong className="text-white">continue to monitor your email inbox for further instructions from these companies</strong>. Many data brokers will send verification emails, follow-up instructions, or confirmation messages that require your action to complete the removal process. Check your inbox — and your spam/junk folder — regularly until all opt-outs are fully confirmed.
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Form */}
         <div className="bg-[#0f2040] border border-[#1a3a5c] rounded-2xl p-8">
           <h2 className="text-white font-bold text-xl mb-2">Enter Your Information</h2>
@@ -120,6 +134,19 @@ export default function PrivacyGuidePage() {
               </div>
             </div>
 
+            {/* Additional Names */}
+            <div>
+              <label className="text-gray-400 text-xs font-semibold uppercase tracking-widest block mb-2">
+                Additional Names Used <span className="text-gray-600 font-normal normal-case">(optional)</span>
+              </label>
+              <input
+                name="additionalNames"
+                placeholder="e.g., maiden name, former last name, or alias"
+                className={inputClass}
+              />
+              <p className="text-gray-500 text-xs mt-1">Include any maiden names, former last names, or other names you have used. Data brokers often store records under previous names — including these ensures those records are found and removed as well.</p>
+            </div>
+
             {/* Email */}
             <div>
               <label className="text-gray-400 text-xs font-semibold uppercase tracking-widest block mb-2">Email Address</label>
@@ -131,7 +158,7 @@ export default function PrivacyGuidePage() {
             <div>
               <label className="text-gray-400 text-xs font-semibold uppercase tracking-widest block mb-2">Date of Birth</label>
               <input name="dob" type="date" required className={inputClass} />
-              <p className="text-gray-600 text-xs mt-1">Used by some sites to locate your exact record.</p>
+              <p className="text-gray-500 text-xs mt-1">Data brokers use your date of birth to link records under your name across multiple databases. Providing it ensures the exact record associated with you is located and removed — not just records that share your name.</p>
             </div>
 
             {/* Current Address */}
@@ -148,7 +175,7 @@ export default function PrivacyGuidePage() {
             {/* Previous Addresses */}
             <div>
               <label className="text-gray-400 text-xs font-semibold uppercase tracking-widest block mb-2">
-                Previous Addresses <span className="text-gray-600 font-normal normal-case">(optional — improves results)</span>
+                Previous Addresses <span className="text-gray-600 font-normal normal-case">(optional)</span>
               </label>
               {prevAddresses.map((addr, idx) => (
                 <div key={idx} className="flex gap-2 mb-2">
@@ -178,6 +205,7 @@ export default function PrivacyGuidePage() {
                   + Add another address
                 </button>
               )}
+              <p className="text-gray-500 text-xs mt-2">Data brokers build profiles by linking your records across every address you have ever lived at. Including previous addresses ensures your information is removed from all associated records — not just your current location.</p>
             </div>
 
             {/* Submit */}
@@ -187,7 +215,7 @@ export default function PrivacyGuidePage() {
                 disabled={loading}
                 className="w-full bg-[#d4a017] hover:bg-[#b8860b] disabled:opacity-60 text-[#0a1628] font-bold py-4 rounded-full text-base transition-colors"
               >
-                {loading ? 'Redirecting to checkout...' : 'Get My Privacy Shield Guide — $29'}
+                {loading ? 'Redirecting to checkout...' : 'Get My Privacy Shield Guide — $39'}
               </button>
               <p className="text-gray-600 text-xs text-center mt-3">
                 Secure payment via Stripe. One-time purchase. Delivered instantly by email.
