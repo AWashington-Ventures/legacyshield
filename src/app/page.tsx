@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-[#080f1e]">
 
       {/* Nav */}
       <nav className="bg-[#0a1628] border-b border-[#1a3a5c] sticky top-0 z-50">
@@ -56,7 +56,7 @@ export default function Home() {
                 Protect Your Family.<br />
                 <span className="text-[#d4a017]">Build Your Legacy.</span>
               </h1>
-              <p className="text-gray-300 text-lg md:text-xl max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed">
+              <p className="text-slate-300 text-lg md:text-xl max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed">
                 LegacyShield teaches DMV Area families everything they need to know about life insurance,
                 estate planning, and building generational wealth — in plain language, from someone in your community.
               </p>
@@ -123,7 +123,7 @@ export default function Home() {
       </section>
 
       {/* Founder */}
-      <section id="founder" className="py-20 px-6 bg-white border-b border-gray-100">
+      <section id="founder" className="py-20 px-6 bg-[#0a1628] border-b border-[#1a3a5c]/30">
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
             {/* Avatar + Identity */}
@@ -139,7 +139,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="text-center lg:text-left">
-                <h3 className="text-2xl font-bold text-[#0a1628]">Anthony Washington</h3>
+                <h3 className="text-2xl font-bold text-white">Anthony Washington</h3>
                 <p className="text-[#d4a017] font-semibold text-sm mt-1">Founder & Community Advocate</p>
                 {/* Social icons */}
                 <div className="flex items-center gap-3 mt-3 justify-center lg:justify-start">
@@ -163,7 +163,7 @@ export default function Home() {
                   { icon: '🏠', label: 'DMV Native' },
                   { icon: '👨‍👩‍👧‍👦', label: 'Family Man & Father' },
                 ].map((badge, i) => (
-                  <div key={i} className="flex items-center gap-1.5 bg-[#0a1628]/5 border border-[#0a1628]/10 text-[#0a1628] text-xs font-medium px-3 py-1.5 rounded-full">
+                  <div key={i} className="flex items-center gap-1.5 bg-[#c9a84c]/10 border border-[#c9a84c]/20 text-[#c9a84c] text-xs font-medium px-3 py-1.5 rounded-full">
                     <span>{badge.icon}</span>
                     <span>{badge.label}</span>
                   </div>
@@ -175,11 +175,11 @@ export default function Home() {
               <div className="inline-block bg-[#d4a017]/20 border border-[#d4a017]/40 text-[#d4a017] text-xs font-semibold px-4 py-1.5 rounded-full mb-5 uppercase tracking-widest">
                 Meet the Founder
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#0a1628] mb-5 leading-tight">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-5 leading-tight">
                 A Face You Can Trust.<br />
                 <span className="text-[#d4a017]">A Voice From Your Community.</span>
               </h2>
-              <div className="space-y-4 text-gray-600 text-base leading-relaxed">
+              <div className="space-y-4 text-gray-300 text-base leading-relaxed">
                 <p>
                   I spent 30 years serving the DC metro area in law enforcement. During that time, I sat across from families in their most vulnerable moments and saw firsthand how financial unpreparedness turns hardship into crisis. Whether it is a family home lost to unpaid property taxes or inheritance stalled in probate court, I have seen how quickly a lack of planning can impact a family’s future. It is a common misconception in our communities that a power of attorney alone is enough to protect your assets.
                 </p>
@@ -189,7 +189,7 @@ export default function Home() {
                 <p>
                   As a Master Mason, a father, and a long-time public servant, I built this for our community. LegacyShield Pro offers real knowledge and practical solutions from someone who understands the challenges our neighbors face.
                 </p>
-                <p className="text-[#0a1628] font-semibold">
+                <p className="text-[#c9a84c] font-semibold">
                   Your family deserves a lasting legacy. I invite you to take the first step toward building a protected future with LegacyShield Pro.
                 </p>
               </div>
@@ -197,7 +197,7 @@ export default function Home() {
                 <a href="#join" className="bg-[#d4a017] hover:bg-[#b8860b] text-[#0a1628] font-bold text-sm px-7 py-3 rounded-full transition-colors text-center">
                   Join the Community
                 </a>
-                <a href="#features" className="border border-[#0a1628]/20 hover:border-[#0a1628] text-[#0a1628] font-semibold text-sm px-7 py-3 rounded-full transition-colors text-center">
+                <a href="#features" className="border border-[#c9a84c]/40 hover:border-[#c9a84c] text-[#c9a84c] font-semibold text-sm px-7 py-3 rounded-full transition-colors text-center">
                   See What's Inside
                 </a>
               </div>
@@ -207,11 +207,11 @@ export default function Home() {
       </section>
 
       {/* Problem */}
-      <section id="about" className="py-20 px-6 bg-gray-50">
+      <section id="about" className="py-20 px-6 bg-[#050f2b]">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0a1628] mb-4">The Problem No One Talks About</h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">The Problem No One Talks About</h2>
+            <p className="text-gray-300 text-lg max-w-2xl mx-auto">
               Families in the DC metro area are leaving generational wealth on the table — not because they don't care, but because no one explained the rules.
             </p>
           </div>
@@ -247,10 +247,10 @@ export default function Home() {
                 ]
               },
             ].map((item, i) => (
-              <div key={i} className="bg-white border border-gray-100 rounded-2xl p-8 text-center shadow-sm">
+              <div key={i} className="bg-[#0a1f3d] border border-[#c9a84c]/20 rounded-2xl p-8 text-center">
                 <div className="text-4xl font-bold text-[#d4a017] mb-2">{item.stat}</div>
-                <div className="font-semibold text-[#0a1628] mb-3">{item.label}</div>
-                <p className="text-gray-500 text-sm leading-relaxed">{item.sub}</p>
+                <div className="font-semibold text-white mb-3">{item.label}</div>
+                <p className="text-slate-400 text-sm leading-relaxed">{item.sub}</p>
                 {'refs' in item && (item as any).refs && (
                   <ul className="mt-3 text-left space-y-1">
                     {(item as any).refs.map((ref: string, ri: number) => (
@@ -265,14 +265,14 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section id="testimonials" className="py-20 px-6 bg-white border-b border-gray-100">
+      <section id="testimonials" className="py-20 px-6 bg-[#0a1628] border-b border-[#1a3a5c]/30">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
             <div className="inline-block bg-[#d4a017]/20 border border-[#d4a017]/40 text-[#d4a017] text-xs font-semibold px-4 py-1.5 rounded-full mb-5 uppercase tracking-widest">
               Member Stories
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0a1628] mb-4">Real Families. Real Results.</h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">Here&apos;s what LegacyShield members are saying.</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Real Families. Real Results.</h2>
+            <p className="text-gray-300 text-lg max-w-2xl mx-auto">Here&apos;s what LegacyShield members are saying.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -295,15 +295,15 @@ export default function Home() {
                 plan: 'Legacy Builder',
               },
             ].map((t, i) => (
-              <div key={i} className="bg-gray-50 border border-gray-100 rounded-2xl p-7 flex flex-col gap-5">
+              <div key={i} className="bg-[#0a1f3d] border border-[#c9a84c]/15 rounded-2xl p-7 flex flex-col gap-5">
                 <div className="flex gap-1">
                   {[...Array(5)].map((_, s) => (
                     <span key={s} className="text-[#d4a017] text-base">★</span>
                   ))}
                 </div>
-                <p className="text-gray-600 text-sm leading-relaxed flex-1">&ldquo;{t.quote}&rdquo;</p>
+                <p className="text-gray-300 text-sm leading-relaxed flex-1">&ldquo;{t.quote}&rdquo;</p>
                 <div className="border-t border-gray-200 pt-4">
-                  <p className="font-bold text-[#0a1628] text-sm">{t.name}</p>
+                  <p className="font-bold text-white text-sm">{t.name}</p>
                   <p className="text-gray-400 text-xs mt-0.5">{t.location} &middot; {t.plan}</p>
                 </div>
               </div>
@@ -313,11 +313,11 @@ export default function Home() {
       </section>
 
       {/* Features */}
-      <section id="features" className="py-20 px-6 bg-white">
+      <section id="features" className="py-20 px-6 bg-[#0a1628]">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0a1628] mb-4">What's Inside LegacyShield</h2>
-            <p className="text-gray-600 text-lg">Everything your family needs — in one place, at a price that makes sense.</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">What's Inside LegacyShield</h2>
+            <p className="text-gray-300 text-lg">Everything your family needs — in one place, at a price that makes sense.</p>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
             {[
@@ -355,8 +355,8 @@ export default function Home() {
               <div key={i} className="flex gap-5 p-6 rounded-2xl border border-gray-100 hover:border-[#d4a017]/30 hover:shadow-md transition-all">
                 <div className="text-3xl flex-shrink-0">{f.icon}</div>
                 <div>
-                  <h3 className="font-bold text-[#0a1628] text-lg mb-2">{f.title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">{f.desc}</p>
+                  <h3 className="font-bold text-white text-lg mb-2">{f.title}</h3>
+                  <p className="text-slate-400 text-sm leading-relaxed">{f.desc}</p>
                 </div>
               </div>
             ))}
@@ -365,11 +365,11 @@ export default function Home() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="py-20 px-6 bg-gray-50">
+      <section id="faq" className="py-20 px-6 bg-[#050f2b]">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0a1628] mb-4">Common Questions</h2>
-            <p className="text-gray-600 text-lg">No jargon. Straight answers.</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Common Questions</h2>
+            <p className="text-gray-300 text-lg">No jargon. Straight answers.</p>
           </div>
           <div className="space-y-4">
             {[
@@ -398,13 +398,13 @@ export default function Home() {
                 a: 'All payments are processed through Stripe — the same payment processor used by Amazon, Shopify, and thousands of major companies. LegacyShield never stores your card details.',
               },
             ].map((item, i) => (
-              <details key={i} className="group bg-white border border-gray-200 rounded-2xl overflow-hidden">
+              <details key={i} className="group bg-[#0a1628] border border-[#1a3a5c]/50 rounded-2xl overflow-hidden">
                 <summary className="flex items-center justify-between px-7 py-5 cursor-pointer list-none">
-                  <span className="font-semibold text-[#0a1628] text-base pr-4">{item.q}</span>
+                  <span className="font-semibold text-white text-base pr-4">{item.q}</span>
                   <span className="text-[#d4a017] font-bold text-xl flex-shrink-0 group-open:rotate-45 transition-transform">+</span>
                 </summary>
                 <div className="px-7 pb-5">
-                  <p className="text-gray-600 text-sm leading-relaxed">{item.a}</p>
+                  <p className="text-gray-300 text-sm leading-relaxed">{item.a}</p>
                 </div>
               </details>
             ))}
@@ -446,9 +446,9 @@ export default function Home() {
             </div>
             <div className="bg-[#d4a017] rounded-2xl p-8 relative overflow-hidden">
               <div className="absolute top-4 right-4 bg-[#0a1628] text-[#d4a017] text-xs font-bold px-3 py-1 rounded-full">BEST VALUE</div>
-              <div className="text-[#0a1628] text-sm font-semibold uppercase tracking-wider mb-4">Legacy Builder</div>
+              <div className="text-white text-sm font-semibold uppercase tracking-wider mb-4">Legacy Builder</div>
               <div className="flex items-baseline gap-2 mb-1">
-                <span className="text-5xl font-bold text-[#0a1628]">$1</span>
+                <span className="text-5xl font-bold text-white">$1</span>
                 <span className="text-[#0a1628]/60 text-sm">first month</span>
               </div>
               <p className="text-[#0a1628]/60 text-sm mb-8">Then $99/month · Cancel anytime</p>
@@ -460,7 +460,7 @@ export default function Home() {
                   'Insurance policy review',
                   'Priority workshop seating',
                 ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-[#0a1628] text-sm">
+                  <li key={i} className="flex items-center gap-3 text-white text-sm">
                     <span className="font-bold">✓</span> {item}
                   </li>
                 ))}
@@ -474,16 +474,16 @@ export default function Home() {
       </section>
 
       {/* Join CTA */}
-      <section id="join" className="py-20 px-6 bg-white">
+      <section id="join" className="py-20 px-6 bg-[#0a1628]">
         <div className="max-w-2xl mx-auto text-center">
           <div className="inline-block bg-[#d4a017]/20 border border-[#d4a017]/40 text-[#d4a017] text-xs font-semibold px-4 py-1.5 rounded-full mb-6 uppercase tracking-widest">
             Limited Time Offer
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-[#0a1628] mb-4">Your First Month Is $1.</h2>
-          <p className="text-gray-600 text-lg mb-3">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Your First Month Is $1.</h2>
+          <p className="text-gray-300 text-lg mb-3">
             Full access. No commitment. Cancel before your second month and you won&apos;t be charged again.
           </p>
-          <p className="text-gray-500 text-base mb-10">
+          <p className="text-slate-400 text-base mb-10">
             Join the families in the DC metro area already protecting what they&apos;ve built.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
