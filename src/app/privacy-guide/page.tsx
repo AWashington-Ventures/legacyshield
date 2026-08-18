@@ -108,6 +108,20 @@ export default function PrivacyGuidePage() {
           </div>
         </div>
 
+        {/* Why No App Can Do This */}
+        <div className="rounded-2xl p-6 mb-8" style={{background:'rgba(201,168,76,0.05)', border:'1px solid rgba(201,168,76,0.2)'}}>
+          <p className="text-[#d4a017] font-black text-xs uppercase tracking-widest mb-3">⚠️ Why No App Can Do This For You</p>
+          <p className="text-gray-300 text-sm leading-relaxed mb-3">
+            Many apps and automated services advertise instant data removal — but here&apos;s the truth: every data broker requires you to <strong className="text-white">verify your identity as a real human being</strong> through confirmation emails, CAPTCHA checks, and identity verification that no app, download, or AI tool can complete on your behalf.
+          </p>
+          <p className="text-gray-300 text-sm leading-relaxed mb-3">
+            Additionally, some third-party removal services may have undisclosed relationships with data aggregators — meaning the company you trusted to &ldquo;delete&rdquo; your information may be connected to organizations that continue to process it through affiliated channels.
+          </p>
+          <p className="text-[#d4a017] text-sm font-bold">
+            The only guaranteed method is doing it yourself — directly, on each site — and confirming your identity as a human at every step. That&apos;s exactly what this guide walks you through.
+          </p>
+        </div>
+
         {/* Form */}
         <div className="bg-[#0f2040] border border-[#1a3a5c] rounded-2xl p-8">
           <h2 className="text-white font-bold text-xl mb-2">Enter Your Information</h2>
