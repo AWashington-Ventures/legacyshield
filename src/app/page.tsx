@@ -25,6 +25,24 @@ export default function Home() {
         </div>
       </nav>
 
+      {/* Brand Banner */}
+      <section style={{ background: '#0a1628', padding: '24px 20px 0' }}>
+        <div style={{ maxWidth: 1400, margin: '0 auto' }}>
+          <div style={{
+            borderRadius: 14,
+            overflow: 'hidden',
+            border: '1px solid rgba(201,168,76,0.25)',
+            boxShadow: '0 0 60px rgba(201,168,76,0.07), 0 0 120px rgba(201,168,76,0.03)',
+          }}>
+            <img
+              src="/banner.jpg"
+              alt="LegacyShield Pro — Protect. Plan. Legacy."
+              style={{ width: '100%', height: 'auto', display: 'block' }}
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Hero */}
       <section className="bg-[#0a1628] text-white py-16 md:py-24 px-6 overflow-hidden">
         <div className="max-w-6xl mx-auto">
