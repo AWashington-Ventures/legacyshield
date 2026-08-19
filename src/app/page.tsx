@@ -6,8 +6,8 @@ export default function Home() {
       <nav className="bg-[#0a1628] border-b border-[#1a3a5c] sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src="/images/legacyshield_icon.png" alt="LegacyShield" className="h-10 w-auto" />
-            <span className="text-white font-bold text-xl tracking-tight">LegacyShield</span>
+            <img src="/images/lsp_icon_v2.png" alt="LegacyShield Pro" className="h-10 w-auto" />
+            <span className="text-white font-bold text-xl tracking-tight">LegacyShield Pro</span>
           </div>
           <div className="hidden md:flex items-center gap-8">
             <a href="#founder" className="text-gray-300 hover:text-white text-sm transition-colors">About</a>
@@ -502,7 +502,7 @@ export default function Home() {
       <footer className="bg-[#0a1628] text-gray-400 py-12 px-6">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
-            <img src="/images/legacyshield_icon.png" alt="LegacyShield" className="h-8 w-auto" />
+            <img src="/images/lsp_icon_v2.png" alt="LegacyShield" className="h-8 w-auto" />
             <span className="text-white font-bold">LegacyShield</span>
           </div>
           <p className="text-sm text-center">LegacyShield is a financial education platform. We do not provide legal or financial advice.</p>

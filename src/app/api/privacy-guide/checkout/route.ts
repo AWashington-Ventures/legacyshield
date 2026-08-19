@@ -29,7 +29,7 @@ export async function POST(req: NextRequest) {
       status: 'pending_payment',
     });
 
-    const baseUrl = process.env.NEXTAUTH_URL || 'https://legacyshieldpro.com';
+    const privacyGuideBaseUrl = 'https://legacyshieldpro.com';
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
@@ -48,13 +48,13 @@ export async function POST(req: NextRequest) {
               description:
                 'Personalized step-by-step guide to remove your information from 18 major data broker websites. Delivered instantly by email.',
             },
-            unit_amount: 2900, // $29.00
+            unit_amount: 3900, // $39.00
           },
           quantity: 1,
         },
       ],
-      success_url: `${baseUrl}/privacy-guide/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${baseUrl}/privacy-guide?canceled=true`,
+      success_url: `${privacyGuideBaseUrl}/privacy-guide/success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${privacyGuideBaseUrl}/privacy-guide?canceled=true`,
     });
 
     return NextResponse.json({ url: session.url });

@@ -4,7 +4,7 @@ export default function TermsOfService() {
   return (
     <div style={{minHeight:'100vh',background:'#f9fafb',fontFamily:'sans-serif'}}>
       <div style={{background:'#0a1628',padding:'1rem 2rem',display:'flex',alignItems:'center',gap:'1rem'}}>
-        <a href="/"><img src="/images/legacyshield_icon.png" alt="LegacyShield" style={{height:'40px'}} /></a>
+        <a href="/"><img src="/images/lsp_icon_v2.png" alt="LegacyShield" style={{height:'40px'}} /></a>
         <span style={{color:'white',fontWeight:'bold',fontSize:'1.1rem'}}>LegacyShield Pro</span>
       </div>
       <div style={{maxWidth:'800px',margin:'0 auto',padding:'3rem 2rem',color:'#1f2937'}}>
