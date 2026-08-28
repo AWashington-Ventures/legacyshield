@@ -506,7 +506,10 @@ export default function Home() {
             <span className="text-white font-bold">LegacyShield</span>
           </div>
           <p className="text-sm text-center">LegacyShield is a financial education platform. We do not provide legal or financial advice.</p>
-          <p className="text-sm">© 2026 LegacyShield Pro. All rights reserved.</p>
+          <div className="text-right">
+            <p className="text-sm">© 2026 LegacyShield Pro. All rights reserved.</p>
+            <p className="text-xs text-gray-500 mt-1">Certified Business Enterprise (CBE) | DC Department of Small and Local Business Development (DSLBD)</p>
+          </div>
         </div>
       </footer>
 
